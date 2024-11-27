@@ -4,7 +4,7 @@
 //     const valueSearch = $('.input-search').val()
     
 //     $.ajax({
-//       url:`http://www.omdbapi.com/?apikey=c2913062&s=${valueSearch}`,
+//       url:`http://www.omdbapi.com/?apikey=&s=${valueSearch}`,
 //       success:(result => {
 //         const movies = result.Search
 //         let cards = ''
@@ -14,7 +14,7 @@
     
 //             $('.button-detail').on('click',function(){
 //               $.ajax({
-//                 url: `http://www.omdbapi.com/?apikey=c2913062&i=${$(this).data('id')}`,
+//                 url: `http://www.omdbapi.com/?apikey=&i=${$(this).data('id')}`,
 //                 success: result =>{ 
 //                   const detailModal = showDetail(result)
 //                               $('.modal-body').html(detailModal)
@@ -39,7 +39,7 @@ const buttonSearch = document.querySelector("#search-button")
 buttonSearch.addEventListener("click",function(){
     const inputValue = document.querySelector(".input-search").value
     
-    fetch(`http://www.omdbapi.com/?apikey=c2913062&s=${inputValue}`)
+    fetch(`http://www.omdbapi.com/?apikey=&s=${inputValue}`)
     .then(res => res.json())
     .then(result => {
         let cards = ''
@@ -56,7 +56,7 @@ buttonSearch.addEventListener("click",function(){
             btn.addEventListener('click',function(){
                 const id = this.getAttribute('data-id')
                 
-                fetch(`http://www.omdbapi.com/?apikey=c2913062&i=${id}`)
+                fetch(`http://www.omdbapi.com/?apikey=&i=${id}`)
                 .then(res => res.json())
                 .then(result =>{
                     const detailMovie = showDetail(result)
